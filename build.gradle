@@ -1,13 +1,10 @@
 buildscript {
-    repositories {
-        jcenter()
-    }
     dependencies {
-        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.3'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.1'
     }
 }
 plugins {
-    id 'com.github.johnrengelman.plugin-shadow' version '2.0.3'
+    id 'com.github.johnrengelman.shadow' version '4.0.1'
     id 'java'
    // id 'java-library'
     id 'idea'
@@ -18,6 +15,9 @@ version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
+shadowJar {
+    mergeServiceFiles()
+}
 
 jar {
     manifest {
